@@ -11,9 +11,9 @@ body{
 
 /* !blocco principale */
 .container{
-    width: 700px;
-    height: 400px;
-    border: 2px solid red;
+    width: 800px;
+    height: 550px;
+    border: 1px solid grey;
     margin: 50px auto;
     display: flex;
 }
@@ -21,22 +21,22 @@ img{
     width: 100%;
 }
 .side-content{
-    height: 400px;
-    width: 200px;
-    border: 1px solid black;
+    height: 550px;
+    width: 300px;
+    border: 1px solid gray;
 }
 .main-content{
-    height: 400px;
+    height: 550px;
     width: 500px;
     background-color: gray;
 }
 /*! sidebar */
 .sidebar-top-content{
     background-color: goldenrod;
-    height: 100px;
+    height: 150px;
 }
 .sidebar-menù{
-    height: 40px;
+    height: 50px;
     background-color: #ebebeb;
     display: flex;
     align-items: center;
@@ -65,11 +65,12 @@ img{
     color: grey;
 }
 .sidebar-notifications{
-    height: 40px;
+    height: 60px;
     background-color: #8dd9fc;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap :10px;
 }
 .fa-bell-slash{
     color:white;
@@ -79,31 +80,38 @@ img{
     border-radius: 50%;
     text-align: center;
     line-height: 25px;
+    margin-left: 10px;
 }
 .activate-notifications{
-    font-size: 10px;
+    font-size: 12px;
 }
 .sidebar-search{
-    height: 30px;
+    height: 50px;
     background-color: white;
+    color: grey;
+    text-align: center;
+    line-height: 30px;
+}
+.fa-magnifying-glass{
+    padding-right: 10px;
 }
 .sidebar-bottom-content{
-    background-color: lightcoral;
+    background-color: white;
     overflow-y: auto;
-    height:calc(400px - 100px) ;
+    height:calc(550px - 150px) ;
 }
 /*! main content */
 .top-content{
-    height: calc(400px - 50px) ;
+    height: calc(550px - 50px) ;
     background-color: pink;
 }
 .inner-main{
     overflow-y: auto;
-    background-color: purple;
-    height: calc(400px - 90px);
+    background-image: url(../img/mine.png);
+    height: calc(550px - 100px);
 }
 .info-chat{
-    height: 40px;
+    height: 50px;
     background-color:#ebebeb;
     flex-shrink: 0;
     display: flex;
@@ -117,7 +125,6 @@ img{
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-
 }
 .photo-acquaintance{
     height: 30px;
@@ -126,8 +133,7 @@ img{
     border-radius: 50%;
     margin-left: 10px;
 }
-.info-acquaintance{
-}
+
 .utilities-chat{
     flex-basis: 20%;
     display: flex;
@@ -137,6 +143,6 @@ img{
 }
 .bottom-content{
     height: 50px;
-    background-color: aquamarine;
+    background-color: #f2ede9;
 }
 
