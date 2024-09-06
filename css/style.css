@@ -143,6 +143,15 @@ img{
 }
 .bottom-content{
     height: 50px;
+    color: grey;
     background-color: #f2ede9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+textarea {
+    resize: none;
+    width: 400px; 
+  }
+
 
