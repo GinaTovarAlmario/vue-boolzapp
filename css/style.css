@@ -92,6 +92,9 @@ img{
     text-align: center;
     line-height: 30px;
 }
+.sidebar-search input{
+    width: 200px;
+}
 .fa-magnifying-glass{
     padding-right: 10px;
 }
@@ -105,7 +108,7 @@ img{
     height: calc(550px - 50px) ;
     background-color: pink;
 }
-.inner-main{
+.chat{
     overflow-y: auto;
     background-image: url(../img/mine.png);
     height: calc(550px - 100px);
@@ -141,6 +144,35 @@ img{
     justify-content: space-evenly;
     color: grey;
 }
+/* ?chat */
+.message-wrapper {
+    display: flex;
+    margin: 10px 50px;
+}
+
+.message-wrapper.sent {
+    justify-content: right;
+}
+.message-wrapper.received {
+    justify-content: left;
+}
+
+.message{
+    padding: 15px;
+    width: 230px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.message-wrapper.sent .message {
+    background-color:#d6fabb;
+}
+
+.message-wrapper.received .message {
+    background-color: white;
+}
+
+
 .bottom-content{
     height: 50px;
     color: grey;
