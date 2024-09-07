@@ -112,6 +112,9 @@ img{
     padding: 10px 0;
     cursor: pointer;
 }
+.chronology-messages.active{
+    background-color: lightgrey;
+}
 .information-contacts{
     display: flex;
     font-size: 12px;

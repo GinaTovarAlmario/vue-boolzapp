@@ -48,7 +48,8 @@
                 <div class="sidebar-bottom-content">
                     <ul>
                         <li v-for="(contact,index) in contacts">
-                            <div class="chronology-messages" @click="changeSelectedContact(contact)">
+                            <div class="chronology-messages" @click="changeSelectedContact(contact)"
+                            :class="{'active':contact === selectedContact}">
                                 <div class="information-contacts">
                                     <div class="photo-contact">
                                         <img class="photo-acquaintance" :src="contact.avatar" alt="avatar1">
@@ -82,22 +83,17 @@
                             </div>
                         </header>
                         <div class="chat">
-                            <div class="message-wrapper sent">
+                            <!-- object notation -->
+                            <div class="message-wrapper" v-for="(messageObj,index) in selectedContact.messages" 
+                                :class ="{
+                                    
+                                    'sent': messageObj.status === 'sent',
+                                    'received': messageObj.status === 'received'
+                                    
+                                }">
                                 <div class="message">
-                                    <p> Hai portato a spasso il cane?</p>
-                                    <p class="time-message">15:30</p>
-                                </div>
-                            </div>
-                            <div class="message-wrapper sent">
-                                <div class="message">
-                                    <p>Ricordati di stendere i panni</p>
-                                    <p class="time-message">15:50</p>
-                                </div>
-                            </div>
-                            <div class="message-wrapper received">
-                                <div class="message">
-                                    <p>Tutto fatto!</p>
-                                    <p class="time-message">16:15</p>
+                                    <p> {{messageObj.message}}</p>
+                                    <p class="time-message">{{messageObj.date}}</p>
                                 </div>
                             </div>
                         </div>
