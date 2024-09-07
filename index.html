@@ -22,7 +22,7 @@
         <div class="container">
             <div class="side-content">
                 <div class="sidebar-top-content">
-                    <header class="sidebar-menù">
+                    <header class="sidebar-menu">
                         <div class="sidebar-profile">
                             <img class="profile-img" src="img/avatar_io.png" alt="profile-img">
                             <div>Sofia</div>
@@ -48,7 +48,7 @@
                 <div class="sidebar-bottom-content">
                     <ul>
                         <li v-for="(contact,index) in contacts">
-                            <div class="chronology-messages">
+                            <div class="chronology-messages" @click="changeSelectedContact(contact)">
                                 <div class="information-contacts">
                                     <div class="photo-contact">
                                         <img class="photo-acquaintance" :src="contact.avatar" alt="avatar1">
@@ -69,9 +69,9 @@
                     <main>
                         <header class="info-chat">
                             <div class="profile-index-book">
-                                <img class="photo-acquaintance" src="img/avatar_1.png" alt="avatar1">
+                                <img class="photo-acquaintance" :src="selectedContact.avatar" alt="avatar1">
                                 <div class="info-acquaintance">
-                                    <h4 class="name-acquaintance">Michele</h4>
+                                    <h4 class="name-acquaintance">{{selectedContact.name}}</h4>
                                     <p class="last-access-acquaintance">Ultimo accesso oggi alle 12:00</p>
                                 </div>
                             </div>

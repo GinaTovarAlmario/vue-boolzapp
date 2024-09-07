@@ -36,6 +36,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            selectedContact:null,
             contacts : [
                 {
                     name: 'Michele',
@@ -200,6 +201,20 @@ createApp({
                 }
             ],
         }
+    },
+    methods:{
+
+        changeSelectedContact(contact){
+            this.selectedContact = contact;
+        }
+    },
+    created(){
+        /**
+         * !Quando creo la mia app voglio che il primo oggetto dell'array sia
+         * !mostrato come predefinito nella chat
+         */
+        console.log('Applicazione creata',this.contacts);
+        this.selectedContact = this.contacts[0];
     }
 }).mount('#app')
 
