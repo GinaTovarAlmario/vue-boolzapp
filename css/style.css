@@ -17,6 +17,7 @@ body{
     border: 1px solid grey;
     margin: 50px auto;
     display: flex;
+    overflow: hidden;
 }
 img{
     width: 100%;
@@ -33,7 +34,6 @@ img{
 }
 /*! sidebar */
 .sidebar-top-content{
-    background-color: goldenrod;
     height: 150px;
 }
 .sidebar-menù{
@@ -104,10 +104,31 @@ img{
     overflow-y: auto;
     height:calc(550px - 150px) ;
 }
+/* ?lista contatti e messaggi */
+.chronology-messages{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey ;
+    padding: 10px 0;
+}
+.information-contacts{
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+}
+
+.last-messagge{
+    color: grey;
+}
+.last-time-messagge{
+    font-size: 8px;
+    color: grey;
+    padding-right: 10px;
+}
+
 /*! main content */
 .top-content{
     height: calc(550px - 50px) ;
-    background-color: pink;
 }
 .chat{
     overflow-y: auto;
@@ -131,8 +152,8 @@ img{
     gap: 10px;
 }
 .photo-acquaintance{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border: 1px solid white;
     border-radius: 50%;
     margin-left: 10px;
@@ -164,6 +185,12 @@ img{
     border: 1px solid white;
     border-radius: 10px;
 }
+.time-message{
+    color: grey;
+    font-size: 10px;
+    text-align: end;
+    margin-top: 5px;
+}
 
 .message-wrapper.sent .message {
     background-color:#d6fabb;
@@ -172,8 +199,6 @@ img{
 .message-wrapper.received .message {
     background-color: white;
 }
-
-
 .bottom-content{
     height: 50px;
     color: grey;

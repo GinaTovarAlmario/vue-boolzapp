@@ -46,16 +46,22 @@
                     </div>
                 </div>
                 <div class="sidebar-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit obcaecati, eius aperiam quae temporibus nisi provident ad fugit laborum! Tenetur nihil placeat unde repellendus explicabo dolor possimus esse cupiditate laborum?
-                    Iusto tempora doloremque obcaecati esse reprehenderit vitae, ex cumque, iure beatae voluptatem nam hic ducimus ipsa eaque earum ea neque a ut, ab dolorem? Temporibus at labore velit eveniet quisquam.
-                    Culpa voluptate architecto accusantium odio ea enim molestias et nobis nesciunt modi impedit ut itaque harum debitis accusamus dolor, doloremque eligendi fuga! Provident eaque incidunt repudiandae quibusdam labore laboriosam beatae.
-                    Veniam error dolorum, assumenda voluptatum, repellat mollitia adipisci esse eveniet est quo dolore ex dolores laudantium quasi a officia quibusdam modi sit temporibus placeat sed eius odio omnis! Voluptatem, repellat.
-                    Atque laudantium ratione expedita reprehenderit voluptates eligendi et voluptate necessitatibus magnam libero pariatur, amet sit adipisci ullam maiores esse cum sapiente! Consequuntur dolore, inventore hic consectetur ipsam eligendi provident a.
-                    Velit a fugiat beatae, laboriosam voluptas sequi nobis perspiciatis odio. Nostrum harum, sint facere ipsam, nesciunt esse totam veniam libero alias molestias quis dignissimos fugit itaque repudiandae excepturi voluptatum! Tempora.
-                    Voluptates velit quibusdam nisi inventore doloribus asperiores, facilis fugit repellendus id, eaque quae culpa doloremque commodi vero magnam aspernatur voluptas ea eos error facere cum ipsum possimus molestiae animi. Laboriosam.
-                    Tempore a alias pariatur commodi amet repudiandae incidunt dolor quia nostrum vitae voluptas blanditiis sapiente provident, assumenda eaque dicta minima quisquam placeat reprehenderit eligendi mollitia? Reprehenderit esse adipisci officiis sit?
-                    Sunt rem animi ipsa quam repellat consequuntur nemo culpa excepturi optio sapiente laboriosam, iste at, suscipit dignissimos praesentium alias asperiores officiis odio tempore? Iure excepturi suscipit quisquam provident ad fuga?
-                    Debitis ducimus nam assumenda consequuntur quia. Neque dolores, numquam quas error iste est id incidunt nesciunt dolore repellat maxime laborum ab hic eos consequuntur nemo illum natus quisquam nostrum ad!
+                    <ul>
+                        <li v-for="(contact,index) in contacts">
+                            <div class="chronology-messages">
+                                <div class="information-contacts">
+                                    <div class="photo-contact">
+                                        <img class="photo-acquaintance" :src="contact.avatar" alt="avatar1">
+                                    </div>
+                                    <div class="info-acquaintance">
+                                        <h4 class="name-acquaintance"> {{contact.name}}</h4>
+                                        <p class="last-messagge">Ultimo messaggio inviato</p>
+                                    </div>
+                                </div>
+                                <p class="last-time-messagge">12:00</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="main-content">
@@ -65,8 +71,8 @@
                             <div class="profile-index-book">
                                 <img class="photo-acquaintance" src="img/avatar_1.png" alt="avatar1">
                                 <div class="info-acquaintance">
-                                    <h4>Michele</h4>
-                                    <p>Ultimo accesso oggi alle 12:00</p>
+                                    <h4 class="name-acquaintance">Michele</h4>
+                                    <p class="last-access-acquaintance">Ultimo accesso oggi alle 12:00</p>
                                 </div>
                             </div>
                             <div class="utilities-chat">
@@ -79,16 +85,19 @@
                             <div class="message-wrapper sent">
                                 <div class="message">
                                     <p> Hai portato a spasso il cane?</p>
+                                    <p class="time-message">15:30</p>
                                 </div>
                             </div>
                             <div class="message-wrapper sent">
                                 <div class="message">
                                     <p>Ricordati di stendere i panni</p>
+                                    <p class="time-message">15:50</p>
                                 </div>
                             </div>
                             <div class="message-wrapper received">
                                 <div class="message">
                                     <p>Tutto fatto!</p>
+                                    <p class="time-message">16:15</p>
                                 </div>
                             </div>
                         </div>
