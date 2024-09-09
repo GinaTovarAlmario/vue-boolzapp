@@ -216,11 +216,28 @@ createApp({
                 status: 'sent'
                 }
             );
+            this.sendAutoResponseMessage(content);
             this.clearTextArea();
         },
         clearTextArea(){
             this.newMessage='';
         },
+        addResponseMessage(content){
+            this.selectedContact.messages.push(
+                {
+                date: '10/01/2020 15:51:00',
+                message: 'ok',
+                status: 'received'
+                }
+            );
+        },
+        sendAutoResponseMessage(content){
+            if(this.newMessage.length >= 1){
+                setTimeout(()=>{
+                    this.addResponseMessage();
+                },1000);
+            }
+        }
     },
     created(){
         /**
@@ -232,33 +249,4 @@ createApp({
     }
 }).mount('#app')
 
-
-
-// const libri = [
-//     {
-//         name: 'Michele',
-//         avatar: './img/avatar_1.png',
-//         visible: true,
-//         messages: [
-//             {
-//                 date: '10/01/2020 15:30:55',
-//                 message: 'Hai portato a spasso il cane?',
-//                 status: 'sent'
-//             },
-//             {
-//                 date: '10/01/2020 15:50:00',
-//                 message: 'Ricordati di stendere i panni',
-//                 status: 'sent'
-//             },
-//             {
-//                 date: '10/01/2020 16:15:22',
-//                 message: 'Tutto fatto!',
-//                 status: 'received'
-//             }
-//         ]
-    
-//     }
-// ];
-
-// console.log(libri[0].messages[0]);
     
