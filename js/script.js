@@ -41,6 +41,7 @@ createApp({
         return {
             selectedContact:null,
             newMessage : '',
+            searchContact:'',
             contacts : [
                 {
                     name: 'Michele',
@@ -243,13 +244,12 @@ createApp({
         },
         formatDate(fullDateString){
             // date: '10/01/2020 15:30:55',
-
             const dt = DateTime.fromFormat(fullDateString, "dd/MM/yyyy HH:mm:ss");
             return  dt.toLocaleString(DateTime.TIME_SIMPLE);
         },
     },
     computed: {
-       
+ 
 
     },
     created(){

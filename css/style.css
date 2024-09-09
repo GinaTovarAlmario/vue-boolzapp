@@ -1,3 +1,9 @@
+/* cistom properties */
+:root{
+    --main-color:grey;
+    --secondary-color: white;
+    --main-heigth :550px;
+}
 /* reset */
 * {
     margin: 0;
@@ -13,24 +19,21 @@ body{
 /* !blocco principale */
 .container{
     width: 800px;
-    height: 550px;
-    border: 1px solid grey;
+    height: var(--main-heigth);
     margin: 50px auto;
-    display: flex;
     overflow: hidden;
 }
 img{
     width: 100%;
 }
 .side-content{
-    height: 550px;
+    height: var(--main-heigth);
     width: 300px;
-    border: 1px solid gray;
 }
 .main-content{
-    height: 550px;
+    height: var(--main-heigth);
     width: 500px;
-    background-color: gray;
+    background-color:var(--main-color);
 }
 /*! sidebar */
 .sidebar-top-content{
@@ -39,57 +42,45 @@ img{
 .sidebar-menu{
     height: 50px;
     background-color: #ebebeb;
-    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .sidebar-profile{
     flex-basis: 50%;
-    display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-left: 5px;
-    gap: 5px;
 }
 .profile-img{
     height: 30px;
     width: 30px;
-    border: 1px solid white;
     border-radius: 50%;
 }
 .sidebar-icons{
     flex-basis: 50%;
-    display: flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 8px;
-    color: grey;
+    color: var(--main-color);
 }
 .sidebar-notifications{
     height: 60px;
     background-color: #8dd9fc;
-    display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap :10px;
 }
 .fa-bell-slash{
-    color:white;
+    color:var(--secondary-color);
     height: 25px;
     width: 25px;
-    border: 1px solid white;
     border-radius: 50%;
     text-align: center;
     line-height: 25px;
     margin-left: 10px;
 }
-.activate-notifications{
-    font-size: 12px;
-}
 .sidebar-search{
     height: 50px;
-    background-color: white;
-    color: grey;
+    background-color:var(--secondary-color);
+    color:var(--main-color);
     text-align: center;
     line-height: 30px;
 }
@@ -100,97 +91,79 @@ img{
     padding-right: 10px;
 }
 .sidebar-bottom-content{
-    background-color: white;
+    background-color: var(--secondary-color);
     overflow-y: auto;
-    height:calc(550px - 150px) ;
+    height:calc(var(--main-heigth) - 150px) ;
 }
 /* ?lista contatti e messaggi */
 .chronology-messages{
-    display: flex;
     justify-content: space-between;
-    border-top: 1px solid grey ;
     padding: 10px 0;
     cursor: pointer;
 }
 .chronology-messages.active{
     background-color: lightgrey;
 }
-.information-contacts{
-    display: flex;
-    font-size: 12px;
-    gap: 10px;
-}
-
 .last-messagge{
-    color: grey;
+    color: var(--main-color);
 }
 .last-time-messagge{
     font-size: 8px;
-    color: grey;
+    color: var(--main-color);
     padding-right: 10px;
 }
 
 /*! main content */
 .top-content{
-    height: calc(550px - 50px) ;
+    height: calc(var(--main-heigth) - 50px) ;
 }
 .chat{
     overflow-y: auto;
     background-image: url(../img/mine.png);
-    height: calc(550px - 100px);
+    height: calc(var(--main-heigth) - 100px);
 }
 .info-chat{
     height: 50px;
     background-color:#ebebeb;
     flex-shrink: 0;
-    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .profile-index-book{
     flex-basis: 80%;
-    font-size: 12px;
-    display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
 }
 .photo-acquaintance{
     height: 40px;
     width: 40px;
-    border: 1px solid white;
     border-radius: 50%;
     margin-left: 10px;
 }
 
 .utilities-chat{
     flex-basis: 20%;
-    display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: grey;
+    color:var(--main-color);
 }
 /* ?chat */
 .message-wrapper {
-    display: flex;
     margin: 10px 50px;
 }
-
 .message-wrapper.sent {
     justify-content: right;
 }
 .message-wrapper.received {
     justify-content: left;
 }
-
 .message{
     padding: 15px;
     width: 230px;
-    border: 1px solid white;
     border-radius: 10px;
 }
 .time-message{
-    color: grey;
+    color: var(--main-color);
     font-size: 10px;
     text-align: end;
     margin-top: 5px;
@@ -201,19 +174,36 @@ img{
 }
 
 .message-wrapper.received .message {
-    background-color: white;
+    background-color: var(--secondary-color);
 }
 .bottom-content{
     height: 50px;
-    color: grey;
+    color: var(--main-color);
     background-color: #f2ede9;
-    display: flex;
     align-items: center;
     justify-content: space-around;
 }
 textarea {
     resize: none;
     width: 400px; 
-  }
+}
 
-
+/* generics */
+.d-flex{
+    display: flex;
+}
+.border-main-color{
+    border: 1px solid var(--main-color);
+}
+.border-secondary-color{
+    border: 1px solid var(--secondary-color);
+}
+.fs-12{
+    font-size: 12px;
+}
+.gap-10{
+    gap: 10px;
+}
+.gap-5{
+    gap: 5px;
+}
