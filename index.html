@@ -101,7 +101,8 @@
                 </div>
                 <div class="bottom-content">
                     <i class="fa-regular fa-face-smile"></i>
-                    <textarea name="message" id="message" placeholder="Scrivi un messaggio"></textarea>
+                    <textarea name="message" id="message" placeholder="Scrivi un messaggio" v-model="newMessage"
+                    @keyup.enter="addNewMessage(newMessage)"></textarea>
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
@@ -109,6 +110,8 @@
     </div>
     <!-- vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
     <!-- js -->
     <script src="js/script.js"></script>
 </body>
