@@ -29,6 +29,9 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
  */
 
+let DateTime = luxon.DateTime;
+const dt = DateTime.now();
+
 // ? DATO IL SEGUENTE ARRAY DI OGGETI
 
 const { createApp } = Vue
@@ -237,7 +240,17 @@ createApp({
                     this.addResponseMessage();
                 },1000);
             }
-        }
+        },
+        formatDate(fullDateString){
+            // date: '10/01/2020 15:30:55',
+
+            const dt = DateTime.fromFormat(fullDateString, "dd/MM/yyyy HH:mm:ss");
+            return  dt.toLocaleString(DateTime.TIME_SIMPLE);
+        },
+    },
+    computed: {
+       
+
     },
     created(){
         /**
