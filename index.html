@@ -95,8 +95,10 @@
                                 <div class="message border-secondary-color d-flex">
                                     <span> {{messageObj.message}}</span>
                                     <div class="options-message">
-                                      </select>
-                                        <i class="fa-solid fa-chevron-down"@click="chooseOption()"></i>
+                                        <select class="pippo">
+                                            <option value="info-text">Message info</option>
+                                            <option value="delete" @click="deleteMessage(content)">Delete Message</option>
+                                        </select>
                                         <p class="time-message">{{formatDate(messageObj.date)}}</p>
                                     </div>
                                 </div>

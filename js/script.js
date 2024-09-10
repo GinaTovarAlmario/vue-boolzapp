@@ -252,6 +252,10 @@ createApp({
             } 
             return filteredData;
         },
+        deleteMessage(content){
+            console.log('ouch');
+
+        },
         // createSearchList(searchedLetter){
         //     const results = this.filterContacts();
         //     const needle = searchedLetter;
