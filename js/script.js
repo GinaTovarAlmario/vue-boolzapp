@@ -29,19 +29,16 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
  */
 
-let DateTime = luxon.DateTime;
-const dt = DateTime.now();
-
+const DateTime = luxon.DateTime;
 // ? DATO IL SEGUENTE ARRAY DI OGGETI
-
 const { createApp } = Vue
 
 createApp({
     data() {
         return {
-            selectedContact:null,
+            selectedContact: null,
             newMessage : '',
-            searchContact:'',
+            searchLetter:'',
             contacts : [
                 {
                     name: 'Michele',
@@ -208,14 +205,14 @@ createApp({
         }
     },
     methods:{
-
         changeSelectedContact(contact){
             this.selectedContact = contact;
         },
         addNewMessage(content){
+            const now = DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
             this.selectedContact.messages.push(
                 {
-                date: '10/01/2020 15:51:00',
+                date: now,
                 message: content,
                 status: 'sent'
                 }
@@ -227,9 +224,10 @@ createApp({
             this.newMessage='';
         },
         addResponseMessage(content){
+            const now = DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
             this.selectedContact.messages.push(
                 {
-                date: '10/01/2020 15:51:00',
+                date: now,
                 message: 'ok',
                 status: 'received'
                 }
@@ -243,14 +241,10 @@ createApp({
             }
         },
         formatDate(fullDateString){
-            // date: '10/01/2020 15:30:55',
+            //todo date: '10/01/2020 15:30:55',
             const dt = DateTime.fromFormat(fullDateString, "dd/MM/yyyy HH:mm:ss");
             return  dt.toLocaleString(DateTime.TIME_SIMPLE);
         },
-    },
-    computed: {
- 
-
     },
     created(){
         /**
@@ -259,7 +253,5 @@ createApp({
          */
         console.log('Applicazione creata',this.contacts);
         this.selectedContact = this.contacts[0];
-    }
+    },
 }).mount('#app')
-
-    

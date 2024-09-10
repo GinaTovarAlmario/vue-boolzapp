@@ -1,8 +1,9 @@
-/* cistom properties */
+/* custom properties */
 :root{
     --main-color:grey;
     --secondary-color: white;
     --main-heigth :550px;
+    --main-width:800px;
 }
 /* reset */
 * {
@@ -15,10 +16,9 @@ body{
     font-family: 'Lato';
     background: linear-gradient(to top,#d9dbd7,#d9dbd7 50%,#d9dbd7 80%, #009687 75%);
 }
-
 /* !blocco principale */
 .container{
-    width: 800px;
+    width: var(--main-width);
     height: var(--main-heigth);
     margin: 50px auto;
     overflow: hidden;
@@ -112,7 +112,6 @@ img{
     color: var(--main-color);
     padding-right: 10px;
 }
-
 /*! main content */
 .top-content{
     height: calc(var(--main-heigth) - 50px) ;
@@ -140,7 +139,6 @@ img{
     border-radius: 50%;
     margin-left: 10px;
 }
-
 .utilities-chat{
     flex-basis: 20%;
     align-items: center;
@@ -168,11 +166,9 @@ img{
     text-align: end;
     margin-top: 5px;
 }
-
 .message-wrapper.sent .message {
     background-color:#d6fabb;
 }
-
 .message-wrapper.received .message {
     background-color: var(--secondary-color);
 }
@@ -187,7 +183,6 @@ textarea {
     resize: none;
     width: 400px; 
 }
-
 /* generics */
 .d-flex{
     display: flex;
