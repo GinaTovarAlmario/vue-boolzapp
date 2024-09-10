@@ -159,6 +159,12 @@ img{
     padding: 15px;
     width: 230px;
     border-radius: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.fa-chevron-down{
+    color: var(--main-color);
+    cursor: pointer;
 }
 .time-message{
     color: var(--main-color);
@@ -186,6 +192,9 @@ textarea {
 /* generics */
 .d-flex{
     display: flex;
+}
+.d-none {
+    display: none;
 }
 .border-main-color{
     border: 1px solid var(--main-color);

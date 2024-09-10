@@ -252,27 +252,39 @@ createApp({
             } 
             return filteredData;
         },
-        compareEachLetter(searchedLetter){
-            const results = this.filterContacts();
-            const needle = searchedLetter;
-            const sameLetter = [];
-            const differentLetter = [];
-            needle.toLowerCase();
-            console.log(results);
-            for(let i = 0; i < results.length; i++){
-                const text = results[i];
-                // prendo la prima lettera del nome contatto
-                let letter = text.charAt(0).toLowerCase();
-                if( letter === needle){
-                    console.log('iniziano con la stessa lettera')
-                    sameLetter.push(text);
-                } else {
-                    console.log('non iniziano con la stessa lettera');
-                    differentLetter.push(text);
+        // createSearchList(searchedLetter){
+        //     const results = this.filterContacts();
+        //     const needle = searchedLetter;
+        //     const sameLetter = [];
+        //     const differentLetter = [];
+        //     needle.toLowerCase();
+        //     console.log(results);
+        //     for(let i = 0; i < results.length; i++){
+        //         const text = results[i];
+        //         // prendo la prima lettera del nome contatto
+        //         let letter = text.charAt(0).toLowerCase();
+        //         if( letter === needle){
+        //             sameLetter.push(text);
+        //         } else {
+        //             differentLetter.push(text);
+        //         }
+        //     }
+        //     console.log('iniziano con la stessa lettera cercata : ',sameLetter);
+        //     console.log('non iniziano con la stessa lettera cercata : ',differentLetter);
+        //     return sameLetter;
+        // }
+    },
+    computed:{
+        searchedListNames(){
+            return this.contacts.filter((contact)=>{
+                let isFound = true;
+
+                if (this.searchedLetter.length > 0){
+                    isFound = contact.name.toLowerCase().includes(this.searchedLetter.toLowerCase());
                 }
-            }
-            console.log(sameLetter);
-            console.log(differentLetter);
+
+                return isFound;
+            });
         }
     },
     created(){

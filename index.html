@@ -43,12 +43,12 @@
                     <div class="sidebar-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" id="search-name" name="search-name" placeholder="cerca contatto" v-model="searchedLetter"
-                        @keyup="compareEachLetter(searchedLetter)">
+                        @keyup="filterContacts()">
                     </div>
                 </div>
                 <div class="sidebar-bottom-content">
                     <ul>
-                        <li v-for="(contact,index) in contacts">
+                        <li v-for="(contact,index) in searchedListNames">
                             <div class="chronology-messages d-flex border-main-color" @click="changeSelectedContact(contact)"
                             :class="{'active':contact === selectedContact}">
                                 <div class="information-contacts d-flex fs-12 gap-10">
@@ -92,9 +92,13 @@
                                     'received': messageObj.status === 'received'
                                     
                                 }">
-                                <div class="message border-secondary-color">
-                                    <p> {{messageObj.message}}</p>
-                                    <p class="time-message">{{formatDate(messageObj.date)}}</p>
+                                <div class="message border-secondary-color d-flex">
+                                    <span> {{messageObj.message}}</span>
+                                    <div class="options-message">
+                                      </select>
+                                        <i class="fa-solid fa-chevron-down"@click="chooseOption()"></i>
+                                        <p class="time-message">{{formatDate(messageObj.date)}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
