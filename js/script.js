@@ -38,7 +38,7 @@ createApp({
         return {
             selectedContact: null,
             newMessage : '',
-            searchLetter:'',
+            searchedLetter:'',
             contacts : [
                 {
                     name: 'Michele',
@@ -244,6 +244,13 @@ createApp({
             //todo date: '10/01/2020 15:30:55',
             const dt = DateTime.fromFormat(fullDateString, "dd/MM/yyyy HH:mm:ss");
             return  dt.toLocaleString(DateTime.TIME_SIMPLE);
+        },
+        filterContacts(){
+            const filteredData= [];
+            for(let contact of this.contacts){
+                filteredData.push(contact.name);
+            }
+            console.log(filteredData);
         },
     },
     created(){
