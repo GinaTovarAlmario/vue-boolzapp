@@ -43,7 +43,7 @@
                     <div class="sidebar-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" id="search-name" name="search-name" placeholder="cerca contatto" v-model="searchedLetter"
-                        @keyup="filterContacts()">
+                        @keyup="compareEachLetter(searchedLetter)">
                     </div>
                 </div>
                 <div class="sidebar-bottom-content">

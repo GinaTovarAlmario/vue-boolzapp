@@ -249,9 +249,31 @@ createApp({
             const filteredData= [];
             for(let contact of this.contacts){
                 filteredData.push(contact.name);
-            }
-            console.log(filteredData);
+            } 
+            return filteredData;
         },
+        compareEachLetter(searchedLetter){
+            const results = this.filterContacts();
+            const needle = searchedLetter;
+            const sameLetter = [];
+            const differentLetter = [];
+            needle.toLowerCase();
+            console.log(results);
+            for(let i = 0; i < results.length; i++){
+                const text = results[i];
+                // prendo la prima lettera del nome contatto
+                let letter = text.charAt(0).toLowerCase();
+                if( letter === needle){
+                    console.log('iniziano con la stessa lettera')
+                    sameLetter.push(text);
+                } else {
+                    console.log('non iniziano con la stessa lettera');
+                    differentLetter.push(text);
+                }
+            }
+            console.log(sameLetter);
+            console.log(differentLetter);
+        }
     },
     created(){
         /**
